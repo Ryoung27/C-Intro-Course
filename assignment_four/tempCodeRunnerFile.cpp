@@ -1,3 +1,3 @@
-    // cout.setf(ios::fixed);
-    // cout.setf(ios::showpoint);
-    // cout.precision(2);
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);

@@ -13,6 +13,9 @@ using namespace std;
 // prints out information to tell the user what this program does.
 void print_introduction();
 
+// getting a lot of bad inputs and want to check them again values.
+double check_input();
+
 // computes and returns the celsius temperature at a depth measured in kilometers.
 double celsius_at_depth(double depth);
 
@@ -33,8 +36,7 @@ int main()
 
     print_introduction();
 
-    cout << "Please enter a depth in KM: ";
-    cin >> depth;
+    depth = check_input();
 
     print_conclusion(depth);
 
@@ -47,6 +49,19 @@ void print_introduction()
 {
     using namespace std;
     cout << "Hello! The program will tell you the temperature of the earth at any depth.";
+}
+
+double check_input()
+{
+    using namespace std;
+
+    double depth;
+
+    // I have yet to check input as of 08/24
+    cout << "Please enter a depth in KM: ";
+    cin >> depth;
+
+    return depth;
 }
 
 double celsius_at_depth(double depth)
@@ -76,13 +91,13 @@ void rerun()
     using namespace std;
     char rerun;
 
-    do
+    while(!(rerun == 'Y' || rerun == 'y' ||  rerun == 'N' || rerun == 'n'))
     {
         cout << "Would you like to do it again? (Y/N): \n";
         cin >> rerun;
+        if (rerun == 'Y' || rerun == 'y')
+            main();
+    }
 
-    }while(!(rerun == 'y' || rerun == 'Y' ||  rerun == 'n' || rerun == 'N'));
 
-    if (rerun == 'y' || rerun == 'Y')
-        main();
 }
