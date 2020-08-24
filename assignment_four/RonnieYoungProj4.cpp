@@ -27,12 +27,49 @@ void rerun();
 
 int main()
 {
-    cout << "Test";
+    using namespace std;
+
+    double depth;
+
+    print_introduction();
+
+    cout << "Please enter a depth in KM: ";
+    cin >> depth;
+
+    print_conclusion(depth);
 
     rerun();
 
     return 0;
 }
+
+void print_introduction()
+{
+    using namespace std;
+    cout << "Hello! The program will tell you the temperature of the earth at any depth.";
+}
+
+double celsius_at_depth(double depth)
+{
+    return (10 * depth + 20);
+}
+
+double celsius_to_fahrenheit(double celsius)
+{
+    return (1.8 * celsius + 32);
+}
+
+void print_conclusion(double depth)
+{
+    using namespace std;
+
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+
+    cout << "The temperature of the earth at a depth of " << (int)depth << " KM  is " << (int)celsius_at_depth(depth) << " in Celsius, and " << (int)celsius_to_fahrenheit(celsius_at_depth(depth)) << " in Fahrenheit." << endl;
+}
+
 
 void rerun()
 {
