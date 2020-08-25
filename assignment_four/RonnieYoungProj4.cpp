@@ -60,6 +60,18 @@ double check_input()
     // I have yet to check input as of 08/24
     cout << "Please enter a depth in KM: ";
     cin >> depth;
+    while(1)
+    {
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "You have entered wrong input, please use a number."<<endl;
+            cin>>depth;
+        }
+        if(!cin.fail())
+            break;
+    }
 
     return depth;
 }
@@ -82,7 +94,7 @@ void print_conclusion(double depth)
     cout.setf(ios::showpoint);
     cout.precision(2);
 
-    cout << "The temperature of the earth at a depth of " << (int)depth << " KM  is " << (int)celsius_at_depth(depth) << " in Celsius, and " << (int)celsius_to_fahrenheit(celsius_at_depth(depth)) << " in Fahrenheit." << endl;
+    cout << "The temperature of the earth at a depth of " << (int)depth << " KM  is " << (int)celsius_at_depth(depth) << " in Celsius, and " << (int)celsius_to_fahrenheit(celsius_at_depth(depth)) << " in Fahrenheit.\n";
 }
 
 
