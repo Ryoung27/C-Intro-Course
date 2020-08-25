@@ -75,7 +75,7 @@ double check_input()
     }
 
     // 6371 is the depth to the center.
-    // 6371 is the depth of one side to the other.
+    // 6371 * 2 is the depth of one side to the other.
     if(depth > 6371 && (depth < 6371 * 2))
     {
         // This formula works out if you went deeper than the core.
