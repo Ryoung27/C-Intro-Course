@@ -60,9 +60,10 @@ double check_input()
     // I have yet to check input as of 08/24
     cout << "Please enter a depth in KM: ";
     cin >> depth;
+    // This verifies our input is a number and not a string or char.
     while(1)
     {
-        if(cin.fail())
+        if(cin.fail() || depth < 0)
         {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
@@ -73,6 +74,28 @@ double check_input()
             break;
     }
 
+    // 6371 is the depth to the center.
+    // 6371 is the depth of one side to the other.
+    if(depth > 6371 && (depth < 6371 * 2))
+    {
+        // This formula works out if you went deeper than the core.
+        cout << "You have went through the core and are on path to the other side of the earth.\n";
+        depth = 6371 - (depth - 6371);
+    }
+    else if(depth > 6371 * 2)
+    {
+        cout << "That's too many Kilometers.\n";
+        cin.clear();
+        cout << "Please enter a depth less than " << 6371 * 2 << " (the depth of the earth from crust to crust) : ";
+        cin>>depth;
+
+        if(depth > 6371 && (depth < 6371 * 2))
+        {
+            // This formula works out if you went deeper than the core.
+            cout << "You have went through the core and are on path to the other side of the earth.\n";
+            depth = 6371 - (depth - 6371);
+        }
+    }
     return depth;
 }
 
