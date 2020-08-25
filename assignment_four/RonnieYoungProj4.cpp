@@ -57,6 +57,9 @@ double check_input()
 
     double depth;
 
+    // This is the depth to the core of the earth.
+    const double EARTH_DEPTH = 6371;
+
     // I have yet to check input as of 08/24
     cout << "Please enter a depth in KM: ";
     cin >> depth;
@@ -76,24 +79,24 @@ double check_input()
 
     // 6371 is the depth to the center.
     // 6371 * 2 is the depth of one side to the other.
-    if(depth > 6371 && (depth < 6371 * 2))
+    if(depth > EARTH_DEPTH && (depth < EARTH_DEPTH * 2))
     {
         // This formula works out if you went deeper than the core.
         cout << "You have went through the core and are on path to the other side of the earth.\n";
-        depth = 6371 - (depth - 6371);
+        depth = EARTH_DEPTH - (depth - EARTH_DEPTH);
     }
-    else if(depth > 6371 * 2)
+    else if(depth > EARTH_DEPTH * 2)
     {
         cout << "That's too many Kilometers.\n";
         cin.clear();
-        cout << "Please enter a depth less than " << 6371 * 2 << " (the depth of the earth from crust to crust) : ";
+        cout << "Please enter a depth less than " << EARTH_DEPTH * 2 << " (the depth of the earth from crust to crust) : ";
         cin>>depth;
 
-        if(depth > 6371 && (depth < 6371 * 2))
+        if(depth > EARTH_DEPTH && (depth < EARTH_DEPTH * 2))
         {
             // This formula works out if you went deeper than the core.
             cout << "You have went through the core and are on path to the other side of the earth.\n";
-            depth = 6371 - (depth - 6371);
+            depth = EARTH_DEPTH - (depth - EARTH_DEPTH);
         }
     }
     return depth;
