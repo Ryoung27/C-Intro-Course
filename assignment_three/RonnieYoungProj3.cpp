@@ -35,6 +35,7 @@ int main()
             }
             //Calculate the number of sticks after player input.
             toothpicks -= human_pick;
+            // Check if someone lost after each pick.
             if(toothpicks <= 0)
             {
                 cout << "You picked the last stick.\n";
@@ -47,7 +48,7 @@ int main()
                 cout << "You picked " << human_pick << " sticks. " << toothpicks << " left.\n";
             }
 
-            //Computers logic.
+            //Computers logic for the number of toothpicks it picks.
             if(toothpicks > 4)
             {
                 computer_pick = 4 - human_pick;
@@ -71,8 +72,9 @@ int main()
             {
                 computer_pick = 1;
             }
-            // computer_pick = (rand() % 3) + 1;
             toothpicks -= computer_pick;
+
+            // Check if someone lost after each pick.
             if(toothpicks <= 0 && human_won == true)
             {
                 cout << "The computer picked the last stick.\n";
@@ -91,3 +93,52 @@ int main()
     }
     return 0;
 }
+
+//Sample Run: Computer Wins.
+// Let's play a game of "23"!
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 20 left.
+// Computer picked 1 sticks. 19 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 16 left.
+// Computer picked 1 sticks. 15 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 12 left.
+// Computer picked 1 sticks. 11 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 8 left.
+// Computer picked 1 sticks. 7 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 4 left.
+// Computer picked 3 sticks. 1 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked the last stick.
+// Sorry the computer beat you!
+// Do you want to play again?(Y/N):
+// N
+
+
+
+//Sample Run: Human Wins.
+// Let's play a game of "23"!
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 20 left.
+// Computer picked 1 sticks. 19 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 16 left.
+// Computer picked 1 sticks. 15 left.
+// Enter the number of sticks you wish to pick: 3
+// You picked 3 sticks. 12 left.
+// Computer picked 1 sticks. 11 left.
+// Enter the number of sticks you wish to pick: 2
+// You picked 2 sticks. 9 left.
+// Computer picked 2 sticks. 7 left.
+// Enter the number of sticks you wish to pick: 2
+// You picked 2 sticks. 5 left.
+// Computer picked 2 sticks. 3 left.
+// Enter the number of sticks you wish to pick: 2
+// You picked 2 sticks. 1 left.
+// The computer picked the last stick.
+// You won!
+// Do you want to play again?(Y/N):
+// N
