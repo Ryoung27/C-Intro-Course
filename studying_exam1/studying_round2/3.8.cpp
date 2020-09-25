@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -35,11 +37,10 @@ int main()
 
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
-    cout.precesion(2);
+    // cout.precesion(2);
     cout << number << " items at $" << price << endl;
     if((saleType == 'R' || saleType == 'r'))
         cout << " including sales tax.\n";
-
 
 
     return 0;
