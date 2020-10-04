@@ -18,25 +18,56 @@ void testMenu();
 // Prints out the menu opitions for the test menu.
 
 bool isLeapYear(int year);
+// Pre Condition:
+// Year has an int value that has been validated.
+
+// Post Condition:
 // Returns a boolean value of true if the year is a leap year.
 // If the year is not a leap year it returns false.
 
 int getCenturyValue(int year);
+// Pre Condition:
+// Year has an int value that has been validated.
+
+// Post Condition:
 // Returns the century value for the year.
 
 int getYearValue(int year);
+// Pre Condition:
+// Year has an int value that has been validated.
+
+// Post Condition:
 // Returns the year value for the year.
 
 int getMonthValue(int month, int year);
+// Pre Condition:
+// Both month and year have an int value that has been validated.
+
+// Post Condition:
 // Returns the value of the month.
 
 int dayOfWeek(int month, int day, int year);
+// Pre Condition:
+// Month, day, and year have an int value that has been validated.
+
+// Post Condition:
 // Returns the day of the week value.
 
 std::string dayOfWeek(int day);
-// pre-condition: day has integer value 0, 1, 2, 3, 4, 5, or 6
-// post-condition: the name of the day of week is returned as a std::. If day
+// Pre Condition:
+// Day has int value 0, 1, 2, 3, 4, 5, or 6
+
+// Post Condition:
+// The name of the day of week is returned as a std::. If day
 // has value 0, then SUNDAY is returned; 1, then MONDAY is returned; and so on.
+
+void getInput(int& month, int& day, int& year);
+// Pre Condition:
+// Month, day, and year are valid ints.
+
+// Post Condition:
+// Returns the month, day, and year.
+
 
 int main()
 {
@@ -101,8 +132,8 @@ int main()
                     cout << "You have input an invalid year, please try a year after 1582." << endl;
                     break;
             case 5: // calculate the day of week of a given date
-                cout << "Please enter a year, a month, and a day : ";
-                cin >> year >> month >> day;
+                cout << "Please enter a month, a day, and a year : ";
+                getInput(month, day, year);
                 if(year > 1582){
                     if(month >= 1 && month < 13){
                         if(day > 0 && day < 32){
@@ -223,6 +254,13 @@ std::string dayOfWeek(int day)
     using namespace std;
     string days[7] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     return days[day];
+}
+
+void getInput(int& month, int& day, int& year)
+{
+    using namespace std;
+    cin >> month >> day >> year;
+    return;
 }
 
 
