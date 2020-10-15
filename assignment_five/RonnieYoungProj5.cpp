@@ -174,12 +174,12 @@ int main()
 
 }
 
-//Definition uses iostream:
+// Definition uses iostream:
+// Function definition.
 
 void testMenu()
 {
     using namespace std;
-    // pre-condition:
     cout << "**************************************************" << endl;
     cout << "* Test Menu *" << endl;
     cout << "Please select from the below listed options (1-7):" << endl;
@@ -192,7 +192,6 @@ void testMenu()
     cout << "7: Exit Program." << endl;
     cout << "**************************************************" << endl;
     return;
-    //// post-condition: the test menu is displayed for choose
 }
 
 bool isLeapYear(int year)
