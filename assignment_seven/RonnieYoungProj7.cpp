@@ -140,6 +140,12 @@ void print_array(int arr[], int size)
 int linear_search(int arr[], int size, int key)
 {
     // linear search
+    for(int i = 0; i < size; i++)
+    {
+        if (key == arr[i])
+            return i;
+    }
+    return -1;
 }
 
 void select_sort(int arr[], int size)
@@ -164,11 +170,33 @@ void swapValues(int& v1, int& v2)
 void insert_sort(int arr[], int size)
 {
     //insert sort
+    int i, key, j;
+    for (i = 1; i < size; i++)
+    {
+        key = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+
 }
 
 void bubble_sort(int arr[], int size)
 {
     //bubble sort
+    for(int i = size- 1; i > 0; i--)
+        for(int j = 0; j < i; j++)
+            if (arr[j] > arr[j+1])
+            {
+                int temp = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+    return;
 }
 
 int indexOfSmallest(const int a[], int startIndex, int numberUsed)
@@ -182,3 +210,105 @@ int indexOfSmallest(const int a[], int startIndex, int numberUsed)
         }
     return indexOfMin;
 }
+
+
+
+
+^
+//         Sample output:
+
+//         ***************************************************
+//         *                   Menu                          *
+//         * 1. Preform linear search                        *
+//         * 2. Preform selection sort                       *
+//         * 3. Preform insertion sort                       *
+//         * 4. Preform bubble sort                          *
+//         * 5. Quit                                         *
+//         ***************************************************
+// Enter your choice: 1
+// Please input 9 separate integers.
+// 1
+// 9
+// 2
+// 8
+// 3
+// 7
+// 4
+// 7
+// 5
+// Enter the key you want to search: 5
+// The key 5 is #1 element in array
+// 1 9 2 8 3 7 4 7 5
+//         ***************************************************
+//         *                   Menu                          *
+//         * 1. Preform linear search                        *
+//         * 2. Preform selection sort                       *
+//         * 3. Preform insertion sort                       *
+//         * 4. Preform bubble sort                          *
+//         * 5. Quit                                         *
+//         ***************************************************
+// Enter your choice: 2
+// Please input 9 separate integers.
+// 1
+// 9
+// 2
+// 8
+// 3
+// 7
+// 4
+// 6
+// 5
+// After sort, the array is:
+// 1 2 3 4 5 6 7 8 9
+//         ***************************************************
+//         *                   Menu                          *
+//         * 1. Preform linear search                        *
+//         * 2. Preform selection sort                       *
+//         * 3. Preform insertion sort                       *
+//         * 4. Preform bubble sort                          *
+//         * 5. Quit                                         *
+//         ***************************************************
+// Enter your choice: 3
+// Please input 9 separate integers.
+// 1
+// 9
+// 2
+// 8
+// 3
+// 8
+// 4
+// 5
+// 6
+// After sort, the array is:
+// 1 2 3 4 5 6 8 8 9
+//         ***************************************************
+//         *                   Menu                          *
+//         * 1. Preform linear search                        *
+//         * 2. Preform selection sort                       *
+//         * 3. Preform insertion sort                       *
+//         * 4. Preform bubble sort                          *
+//         * 5. Quit                                         *
+//         ***************************************************
+// Enter your choice: 4
+// Please input 9 separate integers.
+// 1
+// 8
+// 2
+// 3
+// 4
+// 5
+// 7
+// 4
+// 3
+// After sort, the array is:
+// 1 2 3 3 4 4 5 7 8
+//         ***************************************************
+//         *                   Menu                          *
+//         * 1. Preform linear search                        *
+//         * 2. Preform selection sort                       *
+//         * 3. Preform insertion sort                       *
+//         * 4. Preform bubble sort                          *
+//         * 5. Quit                                         *
+//         ***************************************************
+// Enter your choice: 5
+// Thank you for using the array functions
