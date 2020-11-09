@@ -117,3 +117,30 @@ bool is_palindrome(string sentence)
     return true;
 }
 
+
+
+// Sample run through
+// Enter scores, enter -1 to stop:
+// 87
+// 98
+// 65
+// 78
+// 88
+// 93
+// -1
+// There are a total 6 scores.
+// The maximum score is 98.
+// The minimum score is 65.
+// The average score is 84.
+// Do you want to try another set of scores? (y/n)
+// n
+// Enter a sentence:
+// A nut for a jar of tuna
+// A nut for a jar of tuna is not a palindrome
+// Do you want to try another sentence? (y/n)
+// y
+// Enter a sentence:
+// Hello world
+// Hello world is not a palindrome
+// Do you want to try another sentence? (y/n)
+// n
