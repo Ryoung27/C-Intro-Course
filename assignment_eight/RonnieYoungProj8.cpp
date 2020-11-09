@@ -76,6 +76,7 @@ int main()
     return 0;
 }
 
+//Get the scores for the vector.
 void get_scores(vector<int> &v)
 {
     int next;
@@ -95,6 +96,7 @@ void get_scores(vector<int> &v)
     return;
 }
 
+// Print the stats from the vector, max, mini, and average of all values.
 void print_stats(vector<int> &v)
 {
     if(v.size() > 0){
@@ -105,6 +107,7 @@ void print_stats(vector<int> &v)
     return;
 }
 
+// Function to check if a given sentence is a palindrome
 bool is_palindrome(string sentence)
 {
     size_t len = sentence.length();
@@ -119,7 +122,7 @@ bool is_palindrome(string sentence)
 
 
 
-// Sample run through
+// Sample output
 // Enter scores, enter -1 to stop:
 // 87
 // 98
